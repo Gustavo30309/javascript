@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Desconto</title>
+</head>
+<body>
+    <h1>Calculo de Desconto</h1>
+    <button onclick="conver()">Desconto 10%</button>
+    <p>Clique no botão acima para iniciar.</p>
+    <h2 id="tex"></h2>
+    <div id="text"></div>
+    <script>
+        function conver() {
+            var produto = prompt('Qual é o produto que você está comprado?')
+            var preco = Number(prompt(`Qual é o preço do ${produto}?`))
+
+            var descunto = preco * 10 / 100
+            var novopreco = preco - descunto
+
+            const precoformatado = preco.toLocaleString('pt-BR', {
+                style:"currency",
+                currency:'BRL'
+            })
+
+            const descontoformatado = descunto.toLocaleString('pt-BR', {
+                style:"currency",
+                currency:'BRL'
+            })
+            const novoprecoformatado = novopreco.toLocaleString('pt-BR', {
+                style:"currency",
+                currency:'BRL'
+            })
+
+            const tex = `Calculando desconto de 10% para ${produto}`
+            const text = `<p>O preço original era ${precoformatado}</p>
+            <p>Você acaba de ganhar ${descontoformatado} de desconto (-10)</p>
+            <p>No fim, você vai pagar ${novoprecoformatado} no produto ${produto}</p>`
+
+            document.getElementById('tex').innerHTML = tex
+            document.getElementById('text').innerHTML = text
+        }
+    </script>
+</body>
+</html>

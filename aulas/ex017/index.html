@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada interativa</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Tabuada interativa</h1>
+    </header>
+    <section>
+        <div>
+            <p>Número: <input type="number" id="txtn1" placeholder="Digite um número:">
+            <button onclick="verificar()">Gerar Tabuada</button>
+            </p>
+        </div>
+    <div>
+        <select name="tabuada" id="seltabe" size="10">
+            <option>Digite um número acima</option>
+        </select>
+    </div>
+    </section>
+    
+    <script>
+        function verificar() {
+            let num = document.getElementById('txtn1')
+            let tab = document.getElementById('seltabe')
+            if (num.value.length == 0) {
+                window.alert('Por Favor, digite um número!')
+            } else {
+                var n1 = Number(num.value)
+                let c = 1
+                tab.innerHTML = ''
+                while(c <= 10) {
+                    let item = document.createElement('option')
+                    item.text = `${n1} x ${c} = ${n1 * c}`
+                    item.value = `tab.value${c}`
+                    tab.appendChild(item)
+                    c++
+                }
+            }
+            
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <h1>Qual é o seu país</h1>
+    <input type="text" id="inputTarefa" placeholder="Qual é seu país de origem?">
+    <button id="verificar" onclick="v()">verificar</button>
+    <p>Sua nacionalidade é </p>
+    <p id="msg"></p>
+    </div>
+    <script>
+        function v(){
+            let inputTarefa = document.getElementById("inputTarefa")
+            let ver = inputTarefa.value
+            let msg = document.getElementById("msg")
+            if(ver == "Brasil"){
+                let br = "Voce é brasileiro"
+                document.getElementById("msg").textContent = br;
+            }
+            else{
+                let es = "Você é estrangeiro!"
+                document.getElementById("msg").textContent = es
+            }
+            inputTarefa.value=""
+        }
+    </script>
+</body>
+</html>

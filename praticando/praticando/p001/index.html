@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sei lá</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pergunta?</h1>
+    <input type="text" id="inputpergunta" placeholder="Você é gay?">
+    <button id="v" onclick="v()">Confirmar</button>
+    <p id="msg"></p>
+    <script>
+        function v(){
+            let inputpergunta = document.getElementById("inputpergunta")
+            let ver = inputpergunta.value
+            let msg = document.getElementById("msg")
+            if(ver == "sim"){
+                let s = "sabia, baitola kkkkkkk"
+                document.getElementById("msg").textContent = s   
+            }
+            else{
+                let para = "Para de mentir, tudo mundo já sabe"
+                document.getElementById("msg").textContent = para
+            }
+
+            inputpergunta.value=""
+        }
+    </script>
+</body>
+</html>

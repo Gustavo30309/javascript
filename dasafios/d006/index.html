@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de temperaturas</title>
+</head>
+<body>
+    <h1>Conversor de temperaturas</h1>
+    <button onclick="conver()">Converter</button>
+    <p>Clique no botão acima para iniciar.</p>
+    <h2 id="tex"></h2>
+    <div id="msg"></div>
+    <script>
+        function conver() {
+            var celsius = Number(prompt('Digite uma temperatura em °C (Celsius)'))
+            var kelvin = (celsius + 273.15).toLocaleString('pt-BR', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            })
+            var fahr = ((celsius * 9/5) + 32).toLocaleString('pt-BR', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits:2
+            })
+            const tex = `A temperatura de ${celsius}, corresponde a...`
+            const text = `${kelvin}°K (Kelvin)<br>
+            ${fahr}°F (Fahrenheit)`
+            document.getElementById('tex').innerHTML = tex
+            document.getElementById('msg').innerHTML = text
+            
+        }
+    </script>
+</body>
+</html>

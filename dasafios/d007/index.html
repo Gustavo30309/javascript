@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convesor R$-> US$</title>
+</head>
+<body>
+    <h1>Convesor R$-> US$</h1>
+    <button onclick="conver()">Converter</button>
+    <p>Clique no botão acima para iniciar.</p>
+    <div id="text"></div>
+    <script>
+        function conver() {
+            var real = Number(prompt(`Quantos R$ você tem na carteira`))
+            var dolar = (real * 0.19).toLocaleString('en-US', {
+                style: 'currency',
+                currency: 'USD'
+            })
+            const text = `Com o dinheiro que vc tem que é R$${real}, vc consegui compra ${dolar}`
+            document.getElementById('text').innerHTML = text
+        }
+    </script>
+</body>
+</html>

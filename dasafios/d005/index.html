@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de medidas</title>
+</head>
+<body>
+    <h1>Conversor de medidas</h1>
+    <button onclick="conver()">Converter</button>
+    <h2 id="men"></h2>
+    <p id="msg"></p>
+    <div id="c"></div>
+    <script>
+        function conver() {
+            var medida = Number(prompt('Digite uma distância em metros (M)'))
+            var quilo = medida / 1000
+            var hec = medida / 100
+            var deca = medida / 10
+            var deci = medida * 10
+            var centi = medida / 100
+            var mili = medida * 1000
+            
+            const text = `${quilo} quilômetros (Km)<br>
+            ${hec} hectômetros (Hm)<br>
+            ${deca} decâmetros(Dam)<br>
+            ${deci} decímetros (dm)<br>
+            ${centi} centímetros (cm)<br>
+            ${mili} milímetros (mm)`
+        
+            document.getElementById('c').innerHTML = text
+        }
+    </script>
+</body>
+</html>

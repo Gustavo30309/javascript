@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Desconto</title>
+    <style>
+        body {
+            font: normal 20pt ;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reajustar Salarial</h1>
+    <button onclick="conver()">Reajustar Salário</button>
+    <p>Clique no botão acima para iniciar.</p>
+    <h2 id="tex"></h2>
+    <div id="text"></div>
+    <script>
+        function conver() {
+            var funcionario = prompt('Qual é o nome do funcionário?')
+            var salario = Number(prompt(`Qual é o salário de ${funcionario}`))
+            var reajuste = Number(prompt(`O salário de ${funcionario} vai ser reajustado em qual porcentagem?`))
+
+            var rea = salario * reajuste / 100
+            var novosalario = salario + rea
+
+            const salarioformatdo = salario.toLocaleString('pt-BR', {
+                style:"currency",
+                currency:'BRL'
+            })
+
+            const reaformatado = rea.toLocaleString('pt-BR', {
+                style:"currency",
+                currency:'BRL'
+            })
+            const novosalarioformatado = novosalario.toLocaleString('pt-BR', {
+                style:"currency",
+                currency:'BRL'
+            })
+            
+
+            const tex = `${funcionario} recebeu um aumento salarial!`
+            const text = `<p>O salário era ${salarioformatdo}.</p>
+            <p>Com um aumento de %${reajuste}, o salário vai aumentar ${reaformatado} no próximo mês.</p>
+            <p>E a partir daí, ${funcionario} vai passar a ganhar ${novosalarioformatado}.</p>`
+
+            document.getElementById('tex').innerHTML = tex
+            document.getElementById('text').innerHTML = text
+        }
+    </script>
+</body>
+</html>
