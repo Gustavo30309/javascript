@@ -1,0 +1,84 @@
+@charset "UTF-8";
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    height: 97vh;
+    position: relative;
+    background-image: url(https://s2.glbimg.com/jpNxAnLfDXTDWxoJMZVSdhEdCQA=/e.glbimg.com/og/ed/f/original/2016/02/19/black_hole.jpg);
+    background-size: cover;
+    background-position: top center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: white;
+    padding-bottom: 30px;
+}
+
+div#container {
+    width: 300px;
+    height: 400px;
+}
+
+div#login {
+    width: 300px;
+    height: 400px;
+    background-image: linear-gradient(to bottom, rgba(128, 128, 128, 0.034), transparent);
+
+    border-radius: 10px ;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+#user {
+    height: 30px;
+    border-radius: 10px;
+    background-color: transparent;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+input::placeholder {
+    color: white;
+}
+
+#senha {
+    height: 30px;
+    border-radius: 10px;
+    background-color: transparent;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+#confirmar {
+    height: 30px;
+    width: 60px;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.678);
+    transition: 1s;
+}    
+
+#confirmar:hover {
+    transition: 1s;
+    background-color: rgb(63, 63, 63);
+}
+
+#confirmar::after {
+    transition: 1s;
+}
+div#msg {
+    color: white;
+    padding: 20px;
+    
+}
+
